@@ -1,7 +1,7 @@
 {
   "name": "react-mail-chips",
-  "version": "0.0.2",
-  "description": "A simple react component for managing and displaying multiple email addresses as chips.",
+  "version": "0.1.0",
+  "description": "🍟 A simple react component for managing and displaying multiple email addresses as chips.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
@@ -10,6 +10,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koalalikecode/react-mail-chips.git"
   },
   "keywords": [
     "react",
@@ -21,6 +25,7 @@
   ],
   "author": "koalalikecode",
   "license": "MIT",
+  "homepage": "https://github.com/koalalikecode/react-mail-chips/blob/main/README.md",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@rollup/plugin-commonjs": "^26.0.1",

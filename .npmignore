@@ -1,0 +1,45 @@
+# Ignore node_modules
+node_modules
+
+# Ignore src directories
+src
+
+# Ignore configuration files
+*.config.js
+*.config.cjs
+*.config.mjs
+*.config.json
+tsconfig.json
+
+# Ignore test files
+__tests__
+__mocks__
+*.test.js
+*.test.jsx
+*.test.ts
+*.test.tsx
+*.spec.js
+*.spec.jsx
+*.spec.ts
+*.spec.tsx
+
+# Ignore storybook files
+.storybook
+stories
+*.stories.js
+*.stories.jsx
+*.stories.ts
+*.stories.tsx
+
+# Ignore miscellaneous files
+*.log
+*.lock
+.DS_Store
+.env
+.vscode
+.idea
+coverage
+
+# Ignore git and npm files
+.gitignore
+.npmignore

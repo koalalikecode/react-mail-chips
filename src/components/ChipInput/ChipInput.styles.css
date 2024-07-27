@@ -1,0 +1,30 @@
+.react-mail-chips > .chip-input-container {
+  display: flex;
+  flex-basis: 200px;
+  flex-direction: column;
+  padding: 0.5rem 0rem;
+  font-size: 14px;
+  flex: 1 1;
+  -webkit-box-flex: 1;
+  overflow: hidden;
+}
+
+.react-mail-chips .chip-input {
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  flex: 1 1;
+}
+
+.react-mail-chips .chip-input-content {
+  font-family: "Roboto", sans-serif;
+  align-self: flex-start;
+  white-space: pre;
+  font-size: 14px;
+  height: 0;
+  visibility: hidden;
+}

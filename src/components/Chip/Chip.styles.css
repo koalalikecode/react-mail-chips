@@ -1,0 +1,23 @@
+.react-mail-chips > .chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+  border-radius: 1rem;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.react-mail-chips > .chip:hover {
+  background-color: #e1e1e1;
+}
+
+.react-mail-chips > .chip > .remove-chip-btn {
+  border: none;
+  display: flex;
+  align-items: center;
+}

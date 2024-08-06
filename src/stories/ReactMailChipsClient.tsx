@@ -8,7 +8,11 @@ const ReactMailChipsClient = () => {
   ]);
   return (
     <body style={{ width: "600px" }}>
-      <ReactMailChips emails={emails} setEmails={setEmails} />
+      <ReactMailChips
+        emails={emails}
+        setEmails={setEmails}
+        placeholder="Type some emails"
+      />
     </body>
   );
 };

@@ -6,8 +6,9 @@ const ChipInput = ({
   emails,
   setEmails,
   inputContainerClassName,
+  inputValue,
+  setInputValue,
 }: ChipInputProps) => {
-  const [inputContent, setInputContent] = useState<string>("");
   const [contentWidth, setContentWidth] = useState<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLSpanElement>(null);
@@ -17,7 +18,7 @@ const ChipInput = ({
     if (contentRef.current) {
       setContentWidth(contentRef.current.clientWidth);
     }
-  }, [inputContent]);
+  }, [inputValue]);
 
   const validateEmail = (email: string) => {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -30,19 +31,19 @@ const ChipInput = ({
 
   const handleInputKeyUp: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if (delimiters.includes(event.key)) {
-      if (validateEmail(inputContent)) {
-        if (!checkEmailExist(inputContent, emails)) {
-          setEmails([...emails, inputContent]);
-          setInputContent("");
+      if (validateEmail(inputValue)) {
+        if (!checkEmailExist(inputValue, emails)) {
+          setEmails([...emails, inputValue]);
+          setInputValue("");
         }
         if (inputRef.current) {
           inputRef.current.value = "";
         }
       }
-    } else if (event.key === "Backspace" && inputContent.length === 0) {
+    } else if (event.key === "Backspace" && inputValue.length === 0) {
       setEmails(emails.slice(0, emails.length - 1));
     } else {
-      setInputContent((event.target as HTMLInputElement).value);
+      setInputValue((event.target as HTMLInputElement).value);
     }
   };
   return (
@@ -59,7 +60,7 @@ const ChipInput = ({
         onKeyUp={handleInputKeyUp}
       />
       <span ref={contentRef} className="chip-input-content">
-        {inputContent}
+        {inputValue}
       </span>
     </div>
   );

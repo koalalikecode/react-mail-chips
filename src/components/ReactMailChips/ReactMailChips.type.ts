@@ -5,6 +5,19 @@ type ReactMailChipsProps = {
   chipClassName?: string;
   inputContainerClassName?: string;
   placeholder?: string;
+  delimiters?: Delimiter[];
 };
+
+export type Delimiter =
+  | ","
+  | ";"
+  | "Enter"
+  | " "
+  | "End"
+  | "ArrowLeft"
+  | "ArrowUp"
+  | "ArrowRight"
+  | "ArrowDown"
+  | "Insert";
 
 export default ReactMailChipsProps;

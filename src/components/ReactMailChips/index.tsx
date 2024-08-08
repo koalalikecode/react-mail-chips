@@ -11,6 +11,7 @@ const ReactMailChips = ({
   chipClassName = "",
   inputContainerClassName = "",
   placeholder = "",
+  delimiters = ["Enter", ",", ";"],
 }: ReactMailChipsProps) => {
   const [inputValue, setInputValue] = useState<string>("");
 
@@ -42,6 +43,7 @@ const ReactMailChips = ({
         inputValue={inputValue}
         setInputValue={setInputValue}
         inputContainerClassName={inputContainerClassName}
+        delimiters={delimiters}
       />
     </div>
   );

@@ -1,6 +1,6 @@
 {
   "name": "react-mail-chips",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "🍟 A simple react component for managing and displaying multiple email addresses as chips.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

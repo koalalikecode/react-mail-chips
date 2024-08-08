@@ -1,6 +1,7 @@
 import { KeyboardEventHandler, useEffect, useRef, useState } from "react";
 import "./ChipInput.styles.css";
 import ChipInputProps from "./ChipInput.type";
+import { Delimiter } from "../ReactMailChips/ReactMailChips.type";
 
 const ChipInput = ({
   emails,
@@ -8,11 +9,11 @@ const ChipInput = ({
   inputContainerClassName,
   inputValue,
   setInputValue,
+  delimiters,
 }: ChipInputProps) => {
   const [contentWidth, setContentWidth] = useState<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLSpanElement>(null);
-  const delimiters = ["Enter", ",", ";"];
 
   useEffect(() => {
     if (contentRef.current) {
@@ -30,7 +31,7 @@ const ChipInput = ({
   };
 
   const handleInputKeyUp: KeyboardEventHandler<HTMLInputElement> = (event) => {
-    if (delimiters.includes(event.key)) {
+    if ((delimiters as string[]).includes(event.key)) {
       if (validateEmail(inputValue)) {
         if (!checkEmailExist(inputValue, emails)) {
           setEmails([...emails, inputValue]);

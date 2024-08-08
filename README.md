@@ -50,14 +50,16 @@ export default App;
 
 ## Props
 
-| Property                | Type                        | Description                                     |
-| ----------------------- | --------------------------- | ----------------------------------------------- |
-| emails                  | `string[]`                  | An array of email strings.                      |
-| setEmails               | `(emails:string[]) => void` | A function to update the emails array.          |
-| className               | `string?`                   | Additional class names for the container.       |
-| chipClassName           | `string?`                   | Additional class names for each chip.           |
-| inputContainerClassName | `string?`                   | Additional class names for the input container. |
+| Property                | Type                        | Description                                     | Default             |
+| ----------------------- | --------------------------- | ----------------------------------------------- | ------------------- |
+| emails                  | `string[]`                  | An array of email strings.                      |                     |
+| setEmails               | `(emails:string[]) => void` | A function to update the emails array.          |                     |
+| className               | `string?`                   | Additional class names for the container.       | `""`                |
+| chipClassName           | `string?`                   | Additional class names for each chip.           | `""`                |
+| inputContainerClassName | `string?`                   | Additional class names for the input container. | `""`                |
+| placeholder             | `string?`                   | Placeholder text for the input field.           | `""`                |
+| delimiters              | `string[]?`                 | An array of delimiters to separate emails.      | `["Enter",",",";"]` |
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT)
+This project is licensed under the [MIT License](https://github.com/koalalikecode/react-mail-chips/blob/main/LICENSE)

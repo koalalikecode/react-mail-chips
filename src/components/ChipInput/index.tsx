@@ -1,7 +1,6 @@
 import { KeyboardEventHandler, useEffect, useRef, useState } from "react";
 import "./ChipInput.styles.css";
 import ChipInputProps from "./ChipInput.type";
-import { Delimiter } from "../ReactMailChips/ReactMailChips.type";
 
 const ChipInput = ({
   emails,
@@ -47,6 +46,18 @@ const ChipInput = ({
       setInputValue((event.target as HTMLInputElement).value);
     }
   };
+
+  const handleInputBlur = () => {
+    if (validateEmail(inputValue)) {
+      if (!checkEmailExist(inputValue, emails)) {
+        setEmails([...emails, inputValue]);
+        setInputValue("");
+      }
+      if (inputRef.current) {
+        inputRef.current.value = "";
+      }
+    }
+  };
   return (
     <div
       className={`chip-input-container ${inputContainerClassName}`}
@@ -59,6 +70,7 @@ const ChipInput = ({
         className="chip-input"
         type="text"
         onKeyUp={handleInputKeyUp}
+        onBlur={handleInputBlur}
       />
       <span ref={contentRef} className="chip-input-content">
         {inputValue}

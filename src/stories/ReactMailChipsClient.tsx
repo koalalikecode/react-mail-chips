@@ -12,7 +12,7 @@ const ReactMailChipsClient = () => {
         emails={emails}
         setEmails={setEmails}
         placeholder="Type some emails"
-        delimiters={["Enter"]}
+        delimiters={["Enter", " "]}
       />
     </body>
   );

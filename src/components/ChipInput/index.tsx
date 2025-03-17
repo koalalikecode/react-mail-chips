@@ -31,9 +31,10 @@ const ChipInput = ({
 
   const handleInputKeyUp: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if ((delimiters as string[]).includes(event.key)) {
-      if (validateEmail(inputValue)) {
-        if (!checkEmailExist(inputValue, emails)) {
-          setEmails([...emails, inputValue]);
+      const trimmedEmail = inputValue.trim();
+      if (validateEmail(trimmedEmail)) {
+        if (!checkEmailExist(trimmedEmail, emails)) {
+          setEmails([...emails, trimmedEmail]);
           setInputValue("");
         }
         if (inputRef.current) {
@@ -58,6 +59,40 @@ const ChipInput = ({
       }
     }
   };
+
+  const handlePaste = (event: React.ClipboardEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    const pastedText = event.clipboardData.getData("text");
+    const currentInputWithPaste = inputValue + pastedText;
+    // Try to handle the combined text as a complete email first
+    if (
+      validateEmail(currentInputWithPaste.trim()) &&
+      !checkEmailExist(currentInputWithPaste.trim(), emails)
+    ) {
+      setEmails([...emails, currentInputWithPaste.trim()]);
+      inputRef.current!.value = "";
+      return;
+    }
+
+    // Then try to split by delimiters for multiple emails
+    const potentialEmails = pastedText.split(/[\s,;]+/);
+
+    const validEmails = potentialEmails
+      .map((email) => email.trim())
+      .filter(
+        (email) =>
+          email && validateEmail(email) && !checkEmailExist(email, emails)
+      );
+
+    if (validEmails.length > 0) {
+      setEmails([...emails, ...validEmails]);
+      setInputValue("");
+    } else {
+      // If no valid emails found, just append the pasted text to input
+      inputRef.current!.value = currentInputWithPaste;
+    }
+  };
+
   return (
     <div
       className={`chip-input-container ${inputContainerClassName}`}
@@ -71,6 +106,7 @@ const ChipInput = ({
         type="text"
         onKeyUp={handleInputKeyUp}
         onBlur={handleInputBlur}
+        onPaste={handlePaste}
       />
       <span ref={contentRef} className="chip-input-content">
         {inputValue}

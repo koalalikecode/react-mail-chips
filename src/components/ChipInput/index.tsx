@@ -1,17 +1,18 @@
 import { KeyboardEventHandler, useEffect, useRef, useState } from "react";
 import "./ChipInput.styles.css";
 import ChipInputProps from "./ChipInput.type";
+import { checkEmailExist, validateEmail } from "../../utils";
 
 const ChipInput = ({
   emails,
   setEmails,
   inputContainerClassName,
   inputValue,
+  inputRef,
   setInputValue,
   delimiters,
 }: ChipInputProps) => {
   const [contentWidth, setContentWidth] = useState<number>(0);
-  const inputRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -19,15 +20,6 @@ const ChipInput = ({
       setContentWidth(contentRef.current.clientWidth);
     }
   }, [inputValue]);
-
-  const validateEmail = (email: string) => {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(email);
-  };
-
-  const checkEmailExist = (email: string, emails: string[]) => {
-    return emails.includes(email);
-  };
 
   const handleInputKeyUp: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if ((delimiters as string[]).includes(event.key)) {

@@ -23,3 +23,26 @@
   font-size: 14px;
   pointer-events: none;
 }
+
+.react-mail-chips > .email-recommendations {
+  position: absolute;
+  max-width: 240px;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 4px 0;
+}
+
+.react-mail-chips .email-recommendation-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.react-mail-chips .email-recommendation-item:hover {
+  background-color: #f5f5f5;
+}

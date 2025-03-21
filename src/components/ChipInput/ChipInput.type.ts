@@ -5,6 +5,7 @@ type ChipInputProps = {
   setEmails: (emails: string[]) => void;
   inputContainerClassName?: string;
   inputValue: string;
+  inputRef: React.RefObject<HTMLInputElement>;
   setInputValue: (inputValue: string) => void;
   delimiters: Delimiter[];
 };

@@ -6,6 +6,7 @@ type ReactMailChipsProps = {
   inputContainerClassName?: string;
   placeholder?: string;
   delimiters?: Delimiter[];
+  recommendedEmails?: string[];
 };
 
 export type Delimiter =

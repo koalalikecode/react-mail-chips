@@ -13,6 +13,7 @@ const ReactMailChipsClient = () => {
         setEmails={setEmails}
         placeholder="Type some emails"
         delimiters={["Enter", " "]}
+        recommendedEmails={["test1@gmail.com", "test2@gmail.com"]}
       />
     </body>
   );

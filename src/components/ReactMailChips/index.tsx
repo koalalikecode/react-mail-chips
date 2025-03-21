@@ -96,18 +96,20 @@ const ReactMailChips = ({
             top: `${recommendationsPosition.top}px`,
           }}
         >
-          {filteredRecommendations.map((email) => (
-            <div
-              key={email}
-              className="email-recommendation-item"
-              onMouseDown={(e) => {
-                e.preventDefault();
-                selectRecommendation(email);
-              }}
-            >
-              {email}
-            </div>
-          ))}
+          <div className="email-recommendations-list">
+            {filteredRecommendations.map((email) => (
+              <div
+                key={email}
+                className="email-recommendation-item"
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  selectRecommendation(email);
+                }}
+              >
+                {email}
+              </div>
+            ))}
+          </div>
         </div>
       )}
       <ChipInput

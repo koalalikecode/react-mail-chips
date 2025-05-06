@@ -8,10 +8,15 @@ A React component library for managing email input as chips.
 
 ## Table of Contents
 
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Props](#props)
 - [License](#license)
+
+## Demo
+
+Try the interactive demo here: [https://react-mail-chips-js.vercel.app](https://react-mail-chips-js.vercel.app/)
 
 ## Installation
 

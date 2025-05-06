@@ -25,7 +25,7 @@
   ],
   "author": "koalalikecode",
   "license": "MIT",
-  "homepage": "https://github.com/koalalikecode/react-mail-chips/blob/main/README.md",
+  "homepage": "https://react-mail-chips-js.vercel.app",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@rollup/plugin-commonjs": "^26.0.1",

@@ -1,0 +1,119 @@
+.demo-bg {
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .demo-bg {
+    background: #18181b;
+  }
+}
+
+.demo-theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: #f4f4f5;
+  color: #18181b;
+  border: none;
+  border-radius: 24px;
+  padding: 7px 18px 7px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.demo-theme-toggle:hover {
+  background: #e0e7ff;
+}
+
+.demo-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 32px 20px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+
+.demo-title {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #18181b;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.demo-mailchips-wrapper {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto 24px auto;
+}
+
+.demo-emails {
+  margin-top: 16px;
+  background: #f4f4f5;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #18181b;
+  word-break: break-all;
+}
+
+.demo-emails b {
+  color: #000;
+}
+
+@media (max-width: 500px) {
+  .demo-container {
+    padding: 18px 4vw;
+    max-width: 98vw;
+  }
+  .demo-mailchips-wrapper {
+    max-width: 100%;
+  }
+}
+
+.mailchips-input-dark input {
+  background: #23232a !important;
+  color: #f4f4f5 !important;
+}
+
+[data-theme="dark"] .demo-bg {
+  background: #18181b;
+}
+[data-theme="dark"] .demo-container {
+  background: #23232a;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+}
+[data-theme="dark"] .demo-title {
+  color: #fff;
+}
+[data-theme="dark"] .demo-theme-toggle {
+  background: #23232a;
+  color: #f4f4f5;
+}
+[data-theme="dark"] .demo-theme-toggle:hover {
+  background: #3730a3;
+  color: #fff;
+}
+[data-theme="dark"] .demo-emails {
+  background: #27272a;
+  color: #fff;
+}
+[data-theme="dark"] .demo-emails b {
+  color: #fff;
+}

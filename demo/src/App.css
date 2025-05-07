@@ -87,7 +87,7 @@
   }
 }
 
-.mailchips-input-dark input {
+.mailchips-input-dark > input {
   background: #23232a !important;
   color: #f4f4f5 !important;
 }

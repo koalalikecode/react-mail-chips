@@ -3,6 +3,10 @@ import "./ChipInput.styles.css";
 import ChipInputProps from "./ChipInput.type";
 import { checkEmailExist, validateEmail } from "../../utils";
 
+/**
+ * Component for handling email input with chip functionality
+ * Supports keyboard navigation, paste handling, and email validation
+ */
 const ChipInput = ({
   emails,
   setEmails,
@@ -11,6 +15,7 @@ const ChipInput = ({
   inputRef,
   setInputValue,
   delimiters,
+  onKeyDown,
 }: ChipInputProps) => {
   const [contentWidth, setContentWidth] = useState<number>(0);
   const contentRef = useRef<HTMLSpanElement>(null);
@@ -97,6 +102,7 @@ const ChipInput = ({
         className="chip-input"
         type="text"
         onKeyUp={handleInputKeyUp}
+        onKeyDown={onKeyDown}
         onBlur={handleInputBlur}
         onPaste={handlePaste}
       />
